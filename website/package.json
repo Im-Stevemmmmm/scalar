@@ -1,25 +1,25 @@
 {
-  "name": "with-tailwindcss",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "autoprefixer": "^10.0.4",
-    "next": "latest",
-    "postcss": "^8.1.10",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "shelljs": "^0.8.4",
-    "tailwindcss": "^2.0.2"
-  },
-  "devDependencies": {
-    "@types/node": "^14.14.22",
-    "@types/react": "^17.0.0",
-    "@types/shelljs": "^0.8.8",
-    "typescript": "^4.1.3"
-  }
+    "name": "with-tailwindcss",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start"
+    },
+    "dependencies": {
+        "autoprefixer": "^10.0.4",
+        "next": "latest",
+        "postcss": "^8.1.10",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "shelljs": "^0.8.4",
+        "tailwindcss": "^2.0.2"
+    },
+    "devDependencies": {
+        "@types/node": "^14.14.22",
+        "@types/react": "^17.0.0",
+        "@types/shelljs": "^0.8.8",
+        "typescript": "^4.1.3"
+    }
 }
