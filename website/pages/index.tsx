@@ -12,7 +12,7 @@ import Head from "next/head";
 
 export default function Home() {
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen py-2">
+        <div className="flex flex-col items-center py-16 bg-white min-h-screen">
             <Head>
                 <title>Transit</title>
                 <link rel="icon" href="/database-line.svg" />
@@ -22,7 +22,7 @@ export default function Home() {
                 <div className="flex flex-row items-center">
                     <div>
                         <div className="flex flex-row">
-                            <h1 className="uppercase font-bold text-6xl">
+                            <h1 className="font-bold text-6xl">
                                 Transit
                                 <svg
                                     className="float-right ml-2"
@@ -86,21 +86,48 @@ export default function Home() {
                     </figure>
                 </div>
 
-                <div className="mt-10">
-                    <h1 className="uppercase text-center font-bold text-gray-800 text-5xl">
-                        Why Transit?
-                    </h1>
+                <div>
+                    <section className="mt-10">
+                        <h2 className="uppercase text-center font-bold text-4xl">
+                            Why Transit?
+                        </h2>
 
-                    <div className="flex flex-row wrap my-5 justify-center">
-                        <InfoCard title="Reusable" iconPath="/json.svg">
-                            Tailor Transit to each of your projects. Lorem are
-                            not available for.
-                        </InfoCard>
-                        <InfoCard title="Disposable" iconPath="/trash.svg">
-                            Tailor Transit to each of your projects. Lorem are
-                            not available for.
-                        </InfoCard>
-                    </div>
+                        <div className="flex flex-row wrap justify-center">
+                            <InfoCard title="Reusable" iconPath="/json.svg">
+                                Tailor Transit to each of your projects. Lorem
+                                are not available for.
+                            </InfoCard>
+                            <InfoCard title="Disposable" iconPath="/trash.svg">
+                                Tailor Transit to each of your projects. Lorem
+                                are not available for.
+                            </InfoCard>
+                            <InfoCard title="Customizable" iconPath="/json.svg">
+                                Tailor Transit to each of your projects. Lorem
+                                are not available for.
+                            </InfoCard>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2 className="uppercase text-center font-bold text-4xl">
+                            Multiple ways to innovate
+                        </h2>
+
+                        <div className="flex flex-row wrap justify-center">
+                            <InfoCard title="Reusable" iconPath="/json.svg">
+                                Tailor Transit to each of your projects. Lorem
+                                are not available for.
+                            </InfoCard>
+                            <InfoCard title="Disposable" iconPath="/trash.svg">
+                                Tailor Transit to each of your projects. Lorem
+                                are not available for.
+                            </InfoCard>
+                            <InfoCard title="Customizable" iconPath="/json.svg">
+                                Tailor Transit to each of your projects. Lorem
+                                are not available for.
+                            </InfoCard>
+                        </div>
+                    </section>
                 </div>
             </main>
         </div>
