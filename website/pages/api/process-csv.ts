@@ -1,19 +1,50 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import shell from "shelljs";
+import shell, { ShellString } from "shelljs";
 
-type Body = {
-    columns: string[];
-    newFile: boolean;
-};
+interface CLIOptions {
+    OutFileName: string;
+    NewFile: boolean;
+    Delimiters: boolean;
+    Columns: string[];
+}
 
-export default (req: NextApiRequest, res: NextApiResponse) => {
-    const body = req.body as Body;
+interface CLIResult {
+    Successful: boolean;
+    ExitCode: number;
+}
+
+const handleShellExecution = ({ code }: ShellString): CLIResult => ({
+    Successful: code == 0,
+    ExitCode: code,
+});
+
+export default (req: NextApiRequest, res: NextApiResponse<CLIResult>) => {
+    const options = req.body as CLIOptions;
     const scriptName = "i.sh";
 
-    shell.exec(`chmod +x ${scriptName}`);
-    shell.exec(`./${scriptName}`);
+    const chmodResult = handleShellExecution(
+        shell.exec(`chmod +x ${scriptName}`)
+    );
+    if (!chmodResult.Successful) {
+        return res.json(chmodResult);
+    }
 
-    res.json({
-        successful: true,
+    const scriptResult = handleShellExecution(
+        shell.exec(`./${scriptName} input.csv ${accumulateFlags(options)}`)
+    );
+    if (!scriptResult.Successful) {
+        return res.json(scriptResult);
+    }
+
+    return res.json({
+        Successful: true,
+        ExitCode: 0,
     });
 };
+
+const accumulateFlags = ({
+    Columns,
+    Delimiters,
+    NewFile,
+    OutFileName,
+}: CLIOptions) => {};
