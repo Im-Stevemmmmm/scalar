@@ -1,75 +1,132 @@
-import { InfoCard } from "components/InfoCard";
 import {
-    Green,
-    Gray,
-    Yellow,
-    Red,
+    Box,
+    Button,
+    Circle,
+    Code,
+    Container,
+    Flex,
+    Grid,
+    GridItem,
+    Heading,
+    HStack,
+    List,
+    ListItem,
+    Stack,
+    Text,
+} from "@chakra-ui/react";
+import { InfoCard } from "components/pages/index/InfoCard";
+import {
     Blue,
-    Purple,
-    BoldPurple,
-} from "components/TerminalColors";
+    Gray,
+    Green,
+    Red,
+    Yellow,
+} from "components/pages/index/TerminalColors";
+import { TitleButton } from "components/pages/index/TitleButton";
+import { FaTerminal, FaRegFileCode, FaConnectdevelop } from "react-icons/fa";
 import Head from "next/head";
 
 export default function Home() {
     return (
-        <div className="flex flex-col items-center py-16 bg-white min-h-screen">
+        <div>
             <Head>
-                <title>Transit</title>
+                <title>Scalar</title>
                 <link rel="icon" href="/database-line.svg" />
             </Head>
 
             <main>
-                <div className="flex flex-row items-center">
-                    <div>
-                        <div className="flex flex-row">
-                            <h1 className="font-bold text-6xl">
-                                Transit
-                                <svg
-                                    className="float-right ml-2"
-                                    version="1.1"
-                                    id="Layer_1"
-                                    xmlBase="http://www.w3.org/2000/svg"
-                                    xmlnsXlink="http://www.w3.org/1999/xlink"
-                                    x="0px"
-                                    y="0px"
-                                    width="1em"
-                                    height="1em"
-                                    viewBox="0 0 101.15 122.88"
-                                    xmlSpace="preserve"
-                                >
-                                    <g>
-                                        <path d="M18.03,27.19c8.26,2.76,19.76,4.46,32.53,4.46c12.77,0,24.27-1.71,32.53-4.46c7.25-2.42,11.74-5.35,11.74-8.22 c0-2.87-4.48-5.8-11.74-8.22C74.83,8,63.33,6.29,50.56,6.29c-12.77,0-24.27,1.71-32.53,4.46C2.65,15.89,2.22,21.91,18.03,27.19 L18.03,27.19z M94.84,85.59c-2.58,1.77-5.87,3.32-9.76,4.62c-8.9,2.97-21.11,4.81-34.52,4.81c-13.41,0-25.62-1.84-34.52-4.81 c-3.84-1.28-7.11-2.82-9.68-4.55v18.85c0.57,2.67,4.92,5.37,11.67,7.62c8.26,2.76,19.76,4.46,32.53,4.46s24.27-1.71,32.53-4.46 c5.01-1.67,8.69-3.59,10.5-5.55c1.49-1.62,1.25-2.69,1.25-4.64V85.59L94.84,85.59z M0,18.97C0,13.1,6.13,8.12,16.04,4.81 C24.94,1.84,37.15,0,50.56,0c13.41,0,25.62,1.84,34.52,4.81c9.02,3.01,14.91,7.41,15.89,12.61c0.12,0.33,0.18,0.69,0.18,1.06v86.74 c0,6.01-11.49,11.33-16.07,12.86c-8.9,2.97-21.11,4.81-34.52,4.81c-13.41,0-25.62-1.84-34.52-4.81 c-4.69-1.57-15.97-6.71-15.97-12.86c0-0.72,0-1.32,0-2.01C0.07,75.12,0,47.04,0,18.97L0,18.97z M6.36,76.64 c0.57,2.67,4.92,5.37,11.67,7.62c8.26,2.76,19.76,4.46,32.53,4.46s24.27-1.71,32.53-4.46c7.25-2.42,11.74-5.35,11.74-8.22h0.03 V57.73c-2.58,1.77-5.89,3.32-9.78,4.62c-8.9,2.97-21.11,4.81-34.52,4.81c-13.41,0-25.62-1.84-34.52-4.81 c-3.84-1.28-7.11-2.82-9.68-4.55V76.64L6.36,76.64z M6.36,48.78c0.57,2.67,4.92,5.37,11.67,7.62c8.26,2.76,19.76,4.46,32.53,4.46 s24.27-1.71,32.53-4.46c7.25-2.42,11.74-5.35,11.74-8.22h0.03V28.52c-2.58,1.77-5.89,3.32-9.78,4.62 c-8.9,2.97-21.11,4.81-34.52,4.81c-13.41,0-25.62-1.84-34.52-4.81c-3.84-1.28-7.11-2.82-9.68-4.55V48.78L6.36,48.78z" />
-                                    </g>
-                                </svg>
-                            </h1>
-                        </div>
+                <Box h={2} w="100%" bg="green.400" />
 
-                        <p className="my-2 text-lg">
-                            A reusable, ease to use, and portable solution
-                            <br />
-                            to normalize your database columns.
-                        </p>
+                <List display="flex" flexDir="row">
+                    <ListItem m={4}>
+                        <Button
+                            leftIcon={<FaConnectdevelop />}
+                            as="a"
+                            bg="white"
+                            borderRadius={2}
+                            cursor="pointer"
+                            _hover={{
+                                borderColor: "green.400",
+                            }}
+                        >
+                            Scalar API
+                        </Button>
+                    </ListItem>
+                    <ListItem m={4}>
+                        <Button
+                            leftIcon={<FaRegFileCode />}
+                            as="a"
+                            bg="white"
+                            borderRadius={2}
+                            cursor="pointer"
+                            _hover={{
+                                borderColor: "green.400",
+                            }}
+                        >
+                            Scalar Wrapper Script
+                        </Button>
+                    </ListItem>
+                    <ListItem m={4}>
+                        <Button
+                            leftIcon={<FaTerminal />}
+                            as="a"
+                            bg="white"
+                            borderRadius={2}
+                            cursor="pointer"
+                            _hover={{
+                                textColor: "green.600",
+                            }}
+                        >
+                            Scalar CLI
+                        </Button>
+                    </ListItem>
+                </List>
 
-                        <div className="flex flex-col">
-                            <button className="py-2 px-6 text-white bg-green-600 rounded-sm my-2 transition hover:bg-green-500">
+                <Flex
+                    flexDir="row"
+                    alignItems="center"
+                    justifyContent="center"
+                    py={[null, 6, 16]}
+                    borderBottom="1px"
+                    borderBottomColor="gray.100"
+                    flexWrap="wrap"
+                >
+                    <Container w="max-content" m={5}>
+                        <Heading as="h1" fontSize="6xl">
+                            Scalar
+                        </Heading>
+
+                        <Text mb={2} fontSize="lg" maxW="37ch">
+                            A non-opiniated and easy to use solution to
+                            normalize your database columns.
+                        </Text>
+
+                        <Stack spacing={2}>
+                            <TitleButton href="getting-started" bg="green.400">
                                 Get Started
-                            </button>
-                            <button className="py-2 px-6 text-white bg-gray-600 rounded-sm my-2 transition hover:bg-green-500">
+                            </TitleButton>
+                            <TitleButton href="" bg="#6B7280">
                                 Fork me on Github
-                            </button>
-                        </div>
-                    </div>
+                            </TitleButton>
+                        </Stack>
+                    </Container>
 
-                    <figure className="w-full max-w-xl border border-gray-600 bg-gray-800 ml-16 text-white text-sm rounded-sm overflow-hidden">
-                        <div className="h-12 bg-gray-900 flex flex-row items-center pl-4 space-x-2">
-                            <figure className="w-3 h-3 bg-red-400 rounded-full" />
-                            <figure className="w-3 h-3 bg-yellow-300 rounded-full" />
-                            <figure className="w-3 h-3 bg-green-300 rounded-full" />
-                        </div>
+                    <Container m={5}>
+                        <HStack
+                            h={12}
+                            bg="gray.900"
+                            alignItems="center"
+                            pl="4"
+                            roundedTop={2}
+                        >
+                            <Circle w={3} h={3} bg="red.400" />
+                            <Circle w={3} h={3} bg="yellow.400" />
+                            <Circle w={3} h={3} bg="green.400" />
+                        </HStack>
 
-                        <div className="p-2 h-52">
-                            <code>
-                                $ ./transit <Green>input.csv</Green>{" "}
+                        <Container p={2} h={52} bg="gray.800" roundedBottom={2}>
+                            <Code bg="transparent" textColor="white">
+                                $ scalar <Green>input.csv</Green>{" "}
                                 <Gray>--output processed.csv</Gray>{" "}
                                 <Red>--delimiter</Red> <Yellow>","</Yellow>{" "}
                                 <Red>--delimiter</Red> <Yellow>" "</Yellow>{" "}
@@ -81,54 +138,73 @@ export default function Home() {
                                 Computing rows... (21/360 rows) <br />
                                 Finished processing 360 rows into processed.csv
                                 <br />
-                            </code>
-                        </div>
-                    </figure>
-                </div>
+                            </Code>
+                        </Container>
+                    </Container>
+                </Flex>
 
-                <div>
-                    <section className="mt-10">
-                        <h2 className="uppercase text-center font-bold text-4xl">
-                            Why Transit?
-                        </h2>
+                <Container mx={0} px={5} maxW="100%">
+                    <Heading
+                        as="h2"
+                        fontWeight="bold"
+                        textAlign="center"
+                        fontSize="4xl"
+                        mt={[null, 6, 16]}
+                    >
+                        Column Normalization Made Easy
+                    </Heading>
 
-                        <div className="flex flex-row wrap justify-center">
-                            <InfoCard title="Reusable" iconPath="/json.svg">
-                                Tailor Transit to each of your projects. Lorem
-                                are not available for.
-                            </InfoCard>
-                            <InfoCard title="Disposable" iconPath="/trash.svg">
-                                Tailor Transit to each of your projects. Lorem
-                                are not available for.
-                            </InfoCard>
-                            <InfoCard title="Customizable" iconPath="/json.svg">
-                                Tailor Transit to each of your projects. Lorem
-                                are not available for.
-                            </InfoCard>
-                        </div>
-                    </section>
+                    <Flex flexDir="row" flexWrap="wrap" justifyContent="center">
+                        <InfoCard title="Reusable" iconPath="/json.svg">
+                            Tailor Transit to each of your projects. Lorem are
+                            not available for.
+                        </InfoCard>
+                        <InfoCard title="Disposable" iconPath="/trash.svg">
+                            Tailor Transit to each of your projects. Lorem are
+                            not available for.
+                        </InfoCard>
+                        <InfoCard title="Customizable" iconPath="/json.svg">
+                            Tailor Transit to each of your projects. Lorem are
+                            not available for.
+                        </InfoCard>
+                    </Flex>
+                </Container>
 
-                    <section>
-                        <h2 className="uppercase text-center font-bold text-4xl">
-                            Multiple ways to innovate
-                        </h2>
+                <Flex
+                    flexDir="column"
+                    my={15}
+                    px={8}
+                    bg="gray.50"
+                    alignItems="center"
+                    py={[null, 6, 16]}
+                >
+                    <Heading textAlign="center">
+                        Trusted by the Developer Community
+                    </Heading>
 
-                        <div className="flex flex-row wrap justify-center">
-                            <InfoCard title="Reusable" iconPath="/json.svg">
-                                Tailor Transit to each of your projects. Lorem
-                                are not available for.
-                            </InfoCard>
-                            <InfoCard title="Disposable" iconPath="/trash.svg">
-                                Tailor Transit to each of your projects. Lorem
-                                are not available for.
-                            </InfoCard>
-                            <InfoCard title="Customizable" iconPath="/json.svg">
-                                Tailor Transit to each of your projects. Lorem
-                                are not available for.
-                            </InfoCard>
-                        </div>
-                    </section>
-                </div>
+                    <Grid
+                        templateRows="repeat(2, 1fr)"
+                        templateColumns="repeat(2, 1fr)"
+                        gap={12}
+                        my={12}
+                    >
+                        <GridItem>
+                            <Heading>
+                                <Green>24K</Green> Downloads
+                            </Heading>
+                            <Text>Lots of downloads.</Text>
+                        </GridItem>
+                        <GridItem>
+                            <Heading>24K Objects</Heading>
+                        </GridItem>
+                        <GridItem>
+                            <Heading>24K Objects</Heading>
+                        </GridItem>
+                        <GridItem>
+                            <Heading>24K Objects</Heading>
+                        </GridItem>
+                    </Grid>
+                </Flex>
             </main>
         </div>
     );
