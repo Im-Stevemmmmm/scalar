@@ -14,7 +14,7 @@ export const InfoCard = ({ title, iconPath, children }: InfoCardProps) => {
             alignItems="center"
             textAlign="center"
             w={64}
-            h={48}
+            h={44}
             bg="white"
             m={16}
         >
